@@ -16,4 +16,4 @@ RUN         export VENV_PATH=$(pipenv --venv); echo $VENV_PATH;
 #CMD         pipenv run uwsgi --ini ${PROJECT_DIR}/.config/uwsgi_http.ini
 
 # Run Nginx
-CMD         nginx -g 'daemon off;'
+#CMD         nginx -g 'daemon off;'
