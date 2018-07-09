@@ -2,6 +2,7 @@
 
 # Django STATIC_ROOT path
 /.static
+/.media
 
 ### Django ###
 *.log
