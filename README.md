@@ -2,6 +2,32 @@
 
 **Web Server** <-> **WSGI** <-> **Web Application**
 
+## Requirements
+
+- Python (3.6)
+- pipenv
+
+### Secrets
+
+#### `.secrets/base.json`
+
+```json
+{
+  "SECRET_KEY": "<Django secret key>"
+}
+```
+
+## Installation
+
+```
+pipenv install
+pipenv shell
+cd app
+./manage.py runserver
+```
+
+---
+
 ## Nginx
 
 ### 웹 서버 설정

@@ -1,8 +1,11 @@
-# Created by https://www.gitignore.io/api/python,django,macos,linux,git,pycharm+all
+# Project Secrets
+/.secrets
 
-# Django STATIC_ROOT path
+# Django Static files path
 /.static
 /.media
+
+# Created by https://www.gitignore.io/api/python,django,macos,linux,git,pycharm+all
 
 ### Django ###
 *.log

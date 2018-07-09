@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+import json
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
+SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
@@ -21,9 +22,17 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
-SECRET_KEY = 'jn(squcool!@xt071f#8)v416-n$g7jn!e=5&qg#!gjpgj-o0y'
+# f = open(os.path.join(SECRETS_DIR, 'base.json'))
+# json_string = f.read()
+# json_object = json.loads(json_string)
+# SECRET_KEY = json_object['SECRET_KEY']
+secrets = json.loads(open(os.path.join(SECRETS_DIR, 'base.json')).read())
+SECRET_KEY = secrets['SECRET_KEY']
+
+# Auth
 AUTH_USER_MODEL = 'members.User'
 
+# Applications
 INSTALLED_APPS = [
     'members',
 
