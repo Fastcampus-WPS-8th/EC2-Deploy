@@ -6,7 +6,8 @@ ENV         PROJECT_DIR     /srv/project
 RUN         apt -y install nginx supervisor
 
 # Build mode
-ENV         BUILD_MODE            dev
+ENV         BUILD_MODE              dev
+ENV         DJANGO_SETTINGS_MODULE  config.settings.dev
 
 # Copy project files
 COPY        .   ${PROJECT_DIR}
